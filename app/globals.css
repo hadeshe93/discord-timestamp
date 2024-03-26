@@ -38,10 +38,7 @@ body {
     outline: none;
     appearance: none;
     color: rgb(var(--foreground-rgb));
-    @apply border-2 rounded-lg;
-  }
-  .inputer:hover, .inputer:active, .inputer:focus {
-    @apply border-cyan-500;
+    @apply border-2 rounded-lg p-1 border-primary text-center;
   }
   .code {
     outline: none;

@@ -1,4 +1,5 @@
 import TimestampInteractor from './components/timestamp-ineractor';
+import IconExternalLink from '../components/IconExternalLink';
 
 export default function Home() {
   return (
@@ -10,7 +11,10 @@ export default function Home() {
       {/* 实现 */}
       <article className="article-block text-center mt-5">
         Experience the convenience of seamless time coordination across global Discord communities with our intuitive
-        tool.
+        tool. &nbsp;
+        <a className='manual-link' rel='external' href='https://discord.com' target='_blank'>
+          Go to discord <IconExternalLink className='text-sm' />
+        </a>
         <br />
         <TimestampInteractor />
       </article>

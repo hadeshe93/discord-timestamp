@@ -1,15 +1,18 @@
 "use client";
 import { ChangeEventHandler, useState, useEffect } from 'react';
+import flatpickr from "flatpickr";
 import dayjs, { Dayjs } from 'dayjs';
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
 import RelativeTime from 'dayjs/plugin/relativeTime';
-import 'dayjs/locale/da'; // 丹麦语
-import 'dayjs/locale/de'; // 德语
-import 'dayjs/locale/en-gb'; // 英国英语
+import "flatpickr/dist/themes/light.css";
+
+// import 'dayjs/locale/da'; // 丹麦语
+// import 'dayjs/locale/de'; // 德语
+// import 'dayjs/locale/es'; // 西班牙语
+// import 'dayjs/locale/zh-cn'; // 中文
+// import 'dayjs/locale/en-gb'; // 英国英语
 import 'dayjs/locale/en'; // 美国英语
-import 'dayjs/locale/es'; // 西班牙语
-import 'dayjs/locale/zh-cn'; // 中文
-import Copy from '../../components/Copy';
+import IconCopy from '../../components/IconCopy';
 
 const SUPPORTED_LANGS = [
   'zh-cn',
@@ -65,7 +68,8 @@ export default function TimestampInteractor() {
   const dayjsObj = dayjs(date);
   // 事件回调
   const onTimestampChanged: ChangeEventHandler<HTMLInputElement> = (evt) => {
-    setDate(new Date(evt.target.value));
+    const { value = '' } = evt.target || {};
+    setDate(value ? new Date(value) : undefined);
   };
   const onCopy = (id: string) => {
     const target = document.querySelector(`#${id}`) as HTMLInputElement;
@@ -80,17 +84,27 @@ export default function TimestampInteractor() {
     dayjs.extend(LocalizedFormat);
     dayjs.extend(RelativeTime);
     dayjs.locale(dayjsLang);
-    setDate(new Date());
+    const defaultDate = new Date();
+    setDate(defaultDate);
+    const targetDom = document.querySelector('#discord-timestamp-inputer');
+    console.log('targetDom:', targetDom);
+    flatpickr(targetDom as Node, {
+      defaultDate,
+      enableTime: true,
+      onChange(value) {
+        setDate(value ? new Date((value as unknown as Date).toString()) : undefined);
+      },
+    });
   }, []);
   // 渲染
   return (
     <div>
       <input
-        value={inputValue}
-        type="datetime-local"
+        id="discord-timestamp-inputer"
+        type="text"
+        readOnly
         className="inputer mt-5"
         placeholder="Please"
-        onChange={onTimestampChanged}
       />
       {
         !date
@@ -109,7 +123,7 @@ export default function TimestampInteractor() {
                       <input className='code' id={`code-${item.format}`} type="text" value={markdownText} readOnly />
                       <span className='ml-2'>{item.render(dayjsObj)}</span>
                     </p>
-                    <Copy className='manual-link' onClick={() => onCopy(codeId)} />
+                    <IconCopy className='manual-link' onClick={() => onCopy(codeId)} />
                   </div>
                 );
               })

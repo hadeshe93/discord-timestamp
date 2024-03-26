@@ -1,5 +1,6 @@
 import { useState } from "react";
-export default function Copy(props: any) {
+
+export default function IconCopy(props: any) {
   const [copied, setCopied] = useState(false);
   const { className, onClick: rawOnClick, ...restProps } = props;
   const onClick = async () => {
