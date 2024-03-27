@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <header className="text-center mt-2">
-        <h1 className="text-5xl font-bold mb-2">Discord Timestamp Converter</h1>
+        <h1 className="text-5xl font-bold mb-2">Discord Timestamp Generator</h1>
         <p className="text-2xl text-gray-500">Convert timestamps between different time zones for Discord users.</p>
       </header>
       {/* 实现 */}
@@ -14,16 +14,18 @@ export default function Home() {
         tool. &nbsp;
         <a className='manual-link' rel='external' href='https://discord.com' target='_blank'>
           Go to discord <IconExternalLink className='text-sm' />
-        </a>
-        <br />
+        </a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a className='manual-link' rel='external' href='https://discord.com/developers/docs/reference#message-formatting-timestamp-styles' target='_blank'>
+          Discord Timestamp Styles <IconExternalLink className='text-sm' />
+        </a><br />
         <TimestampInteractor />
       </article>
       {/* 解释 */}
       <article className="article-block mt-5">
-        <h2 className="text-4xl font-bold mb-2">What is Discord Timestamp Conveter</h2>
+        <h2 className="text-4xl font-bold mb-2">What is Discord Timestamp Generator</h2>
         <p>
           Designed to cater to the diverse needs of online groups, this utility simplifies the process of scheduling
-          events and announcements. By entering a specific time into the tool, you can effortlessly generate markdown
+          events and announcements. By selecting a specific time in the tool, you can effortlessly generate markdown
           text that, when posted in Discord, automatically adjusts to display the corresponding time in each user&apos;s
           local timezone. This ensures clear communication and eliminates the confusion of time conversions, making it
           ideal for coordinating multiplayer gaming sessions, virtual meetings, or any group activities. Once the time

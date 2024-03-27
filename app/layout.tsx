@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Discord Timestamp Converter",
+  title: "Discord Timestamp Generator",
   description: "Automatically convert dates and times to the Discord timestamp format for displaying times in everyone's local timezone.",
   icons: {
     icon: {
