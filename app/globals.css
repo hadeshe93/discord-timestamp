@@ -32,7 +32,7 @@ body {
 
 @layer components {
   .article-block {
-    @apply mx-auto border rounded-lg p-3 w-11/12 sm:p-4 md:p-8 sm:w-4/5 md:w-2/3 md:max-w-4xl;
+    @apply text-gray-700 mx-auto border rounded-lg p-3 w-11/12 sm:p-4 md:p-8 sm:w-4/5 md:w-2/3 md:max-w-4xl;
   }
   .inputer {
     outline: none;
