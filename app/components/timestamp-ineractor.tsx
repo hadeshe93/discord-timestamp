@@ -123,7 +123,7 @@ export default function TimestampInteractor() {
                     <p>
                       {/* <code className='code'>{markdownText}</code> */}
                       <input className='code block sm:inline' id={`code-${item.format}`} type="text" value={markdownText} readOnly />
-                      <span className='ml-2 block sm:inline'>{item.render(dayjsObj)}</span>
+                      <span className='ml-2 block sm:inline font-semibold'>{item.render(dayjsObj)}</span>
                     </p>
                     <IconCopy className='manual-link' onClick={() => onCopy(codeId)} />
                   </div>
