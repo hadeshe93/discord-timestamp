@@ -92,6 +92,7 @@ export default function TimestampInteractor() {
       defaultDate,
       enableTime: true,
       disableMobile: true,
+      minuteIncrement: 1,
       onChange(value) {
         setDate(value ? new Date((value as unknown as Date).toString()) : undefined);
       },
