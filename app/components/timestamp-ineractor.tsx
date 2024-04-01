@@ -91,6 +91,7 @@ export default function TimestampInteractor() {
     flatpickr(targetDom as Node, {
       defaultDate,
       enableTime: true,
+      disableMobile: true,
       onChange(value) {
         setDate(value ? new Date((value as unknown as Date).toString()) : undefined);
       },
@@ -110,7 +111,7 @@ export default function TimestampInteractor() {
         !date
           ? null
           : (
-            <div className='text-left w-2/3 m-auto mt-3'>
+            <div className='text-left w-auto sm:w-2/3 m-auto mt-3'>
             {
               FORMAT_RENDERER_LIST.map((item, idx) => {
                 const markdownText = `<t:${timestamp}:${item.format}>`;
@@ -120,8 +121,8 @@ export default function TimestampInteractor() {
                   <div key={idx} className='flex items-center justify-between mb-2'>
                     <p>
                       {/* <code className='code'>{markdownText}</code> */}
-                      <input className='code' id={`code-${item.format}`} type="text" value={markdownText} readOnly />
-                      <span className='ml-2'>{item.render(dayjsObj)}</span>
+                      <input className='code block sm:inline' id={`code-${item.format}`} type="text" value={markdownText} readOnly />
+                      <span className='ml-2 block sm:inline'>{item.render(dayjsObj)}</span>
                     </p>
                     <IconCopy className='manual-link' onClick={() => onCopy(codeId)} />
                   </div>

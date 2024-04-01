@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description: "Automatically convert dates and times to the Discord timestamp format for displaying times in everyone's local timezone.",
   icons: {
     icon: {
-      url: '/logo.png'
+      url: '/favicon.png'
     },
     shortcut: {
-      url: '/logo.png'
+      url: '/favicon.png'
     },
     apple: {
-      url: '/logo.png'
+      url: '/favicon.png'
     },
   },
 };

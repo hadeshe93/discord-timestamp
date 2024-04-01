@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <>
       <header className="text-center mt-2">
-        <h1 className="text-5xl font-bold mb-2">Discord Timestamp Generator</h1>
-        <p className="text-2xl text-gray-500">Convert timestamps between different time zones for Discord users.</p>
+        <h1 className="text-3xl font-bold mb-2">Discord Timestamp Generator</h1>
+        <p className="text-lg text-gray-400">Convert timestamps between different time zones for Discord users.</p>
       </header>
       {/* 实现 */}
       <article className="article-block text-center mt-5">
@@ -22,7 +22,7 @@ export default function Home() {
       </article>
       {/* 解释 */}
       <article className="article-block mt-5">
-        <h2 className="text-4xl font-bold mb-2">What is Discord Timestamp Generator</h2>
+        <h2 className="text-2xl font-bold mb-2">What is Discord Timestamp Generator</h2>
         <p>
           Designed to cater to the diverse needs of online groups, this utility simplifies the process of scheduling
           events and announcements. By selecting a specific time in the tool, you can effortlessly generate markdown
@@ -36,7 +36,7 @@ export default function Home() {
       </article>
       {/* 解释 */}
       <article className="article-block mt-5">
-        <h2 className="text-4xl font-bold mb-2">What is Discord Community</h2>
+        <h2 className="text-2xl font-bold mb-2">What is Discord Community</h2>
         <p>
           Discord is a popular communication platform designed for creating communities. It is primarily used by gamers
           but has grown to encompass a wide range of interests and communities. The platform allows users to communicate
