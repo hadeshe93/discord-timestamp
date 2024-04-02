@@ -38,7 +38,7 @@ body {
     outline: none;
     appearance: none;
     color: rgb(var(--foreground-rgb));
-    @apply border-2 rounded-lg p-1 border-primary text-center;
+    @apply w-[180px] border-2 rounded-lg p-1 border-primary text-center;
   }
   .code {
     outline: none;
