@@ -1,22 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 // import Script from 'next/script'
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Inter } from 'next/font/google';
+import IconMail from '@/components/IconMail';
+import IconGithub from '@/components/IconGithub';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Discord Timestamp Generator",
-  description: "Automatically convert dates and times to the Discord timestamp format for displaying times in everyone's local timezone.",
+  title: 'Discord Timestamp Generator',
+  description:
+    "Automatically convert dates and times to the Discord timestamp format for displaying times in everyone's local timezone.",
   icons: {
     icon: {
-      url: '/favicon.png'
+      url: '/favicon.png',
     },
     shortcut: {
-      url: '/favicon.png'
+      url: '/favicon.png',
     },
     apple: {
-      url: '/favicon.png'
+      url: '/favicon.png',
     },
   },
 };
@@ -45,7 +48,14 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-        {/* Google tag (gtag.js) */}
+        <footer className="mt-6 mb-6 text-center">
+          <a href="mailto: support@discordtimestampsgenerator.com">
+            <IconMail className="text-lg manual-link" />
+          </a>
+          {/* <a href="https://github.com/hadeshe93/discord-timestamp" className='ml-10'>
+            <IconGithub className="text-lg manual-link" />
+          </a> */}
+        </footer>
       </body>
     </html>
   );
