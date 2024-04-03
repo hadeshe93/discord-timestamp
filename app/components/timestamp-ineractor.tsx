@@ -1,18 +1,19 @@
 'use client';
 import { ChangeEventHandler, useState, useEffect, useMemo } from 'react';
 import flatpickr from 'flatpickr';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
 import RelativeTime from 'dayjs/plugin/relativeTime';
 import { insertScript } from '@/utils/script';
 import Loading from '@/components/Loading';
 import IconCopy from '@/components/IconCopy';
-import { supportedLangsMap, supportedLocales, DEFAULT_LOCALE, FORMAT_RENDERER_LIST } from './configs';
+import { getSupportedLangsMap, getSupportedLocales, DEFAULT_LOCALE, FORMAT_RENDERER_LIST } from './configs';
 
 import 'dayjs/locale/en';
 import 'flatpickr/dist/themes/light.css';
 
-
+// 全局唯一
+const supportedLangsMap = getSupportedLangsMap();
 export default function TimestampInteractor() {
   // 变量
   const [date, setDate] = useState<Date | undefined>(undefined);
@@ -20,6 +21,7 @@ export default function TimestampInteractor() {
   const [loading, setLoading] = useState(false);
   const timestamp = date ? Number(`${date.getTime()}`.substring(0, 10)) : 0;
   const dayjsObj = useMemo(() => dayjs(date), [date]);
+  const supportedLocales = getSupportedLocales(supportedLangsMap);
   // 事件回调
   const onCopy = (id: string) => {
     const target = document.querySelector(`#${id}`) as HTMLInputElement;
@@ -32,6 +34,7 @@ export default function TimestampInteractor() {
     const supportLangLocale = supportedLangsMap[theValue];
     if (!supportLangLocale) return;
     const callback = () => {
+      supportedLangsMap[theValue].loaded = true;
       dayjs.locale(theValue);
       setLocale(theValue);
       setLoading(false);
@@ -48,8 +51,9 @@ export default function TimestampInteractor() {
   // 生命周期
   useEffect(() => {
     const dayjsLang = DEFAULT_LOCALE;
-    // @ts-ignore
-    window.dayjs = dayjs;
+    if (!window.dayjs) {
+      window.dayjs = dayjs;
+    }
     dayjs.extend(LocalizedFormat);
     dayjs.extend(RelativeTime);
     dayjs.locale(dayjsLang);

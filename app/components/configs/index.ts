@@ -1,42 +1,57 @@
 import { Dayjs } from 'dayjs';
 
-export const supportedLangsMap = {
-  en: {
-    localeUrl: '',
-    loaded: true,
-    label: 'English',
-  },
-  da: {
-    localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/da.js',
-    loaded: false,
-    label: 'Dansk',
-  },
-  de: {
-    localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/de.js',
-    loaded: false,
-    label: 'Deutsch',
-  },
-  es: {
-    localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/es.js',
-    loaded: false,
-    label: 'Español',
-  },
-  pt: {
-    localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt.js',
-    loaded: false,
-    label: 'Português',
-  },
-  'zh-cn': {
-    localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/zh-cn.js',
-    loaded: false,
-    label: '简体中文',
-  },
-};
+export interface SupportedLang {
+  localeUrl: string;
+  loaded: boolean;
+  label: string;
+}
+export type SupportedLangsMap = Record<string, SupportedLang>;
 
-export const supportedLocales = Object.entries(supportedLangsMap).map(([key, value]) => ({
-  ...value,
-  locale: key,
-}));
+export interface SupportedLocaled extends SupportedLang {
+  locale: string;
+}
+
+export function getSupportedLangsMap(): SupportedLangsMap {
+  return {
+    en: {
+      localeUrl: '',
+      loaded: true,
+      label: 'English',
+    },
+    da: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/da.js',
+      loaded: false,
+      label: 'Dansk',
+    },
+    de: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/de.js',
+      loaded: false,
+      label: 'Deutsch',
+    },
+    es: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/es.js',
+      loaded: false,
+      label: 'Español',
+    },
+    pt: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt.js',
+      loaded: false,
+      label: 'Português',
+    },
+    'zh-cn': {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/zh-cn.js',
+      loaded: false,
+      label: '简体中文',
+    },
+  };
+}
+
+export function getSupportedLocales(supportedLangsMap: SupportedLangsMap): SupportedLocaled[] {
+  return Object.entries(supportedLangsMap).map(([key, value]) => ({
+    ...value,
+    locale: key,
+  }));
+}
 
 export const DEFAULT_LOCALE = 'en';
 
