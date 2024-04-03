@@ -38,6 +38,16 @@ export function getSupportedLangsMap(): SupportedLangsMap {
       loaded: false,
       label: 'Português',
     },
+    ko: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/ko.js',
+      loaded: false,
+      label: '한국어',
+    },
+    ja: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/ja.js',
+      loaded: false,
+      label: '日本語',
+    },
     'zh-cn': {
       localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/zh-cn.js',
       loaded: false,
