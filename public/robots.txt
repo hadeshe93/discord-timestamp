@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://discord-timestamp.com
+Host: https://discordtimestampsgenerator.com
 
 # Sitemaps
-Sitemap: https://discord-timestamp.com/sitemap.xml
+Sitemap: https://discordtimestampsgenerator.com/sitemap.xml

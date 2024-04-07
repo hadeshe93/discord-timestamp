@@ -8,7 +8,7 @@
     "postbuild": "pnpm build:sitemap",
     "start": "next start # to start a Next.js production server.",
     "lint": "next lint",
-    "build:sitemap": "cross-env SITE_URL=https://discord-timestamp.com next-sitemap --config next-sitemap.config.js"
+    "build:sitemap": "cross-env SITE_URL=https://discordtimestampsgenerator.com next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
