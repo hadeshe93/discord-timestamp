@@ -25,7 +25,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-2">How to use it?</h2>
         <p>Step 1: Choose a specific time on the inputer.</p>
         <p>Step 2: Click the icon behind which time format you wanna use in discord.</p>
-        <p>Step 3: Paste it into input box of discord.</p>
+        <p>Step 3: Paste the copied markdown snippet behind the message you just type into input box of discord, then send it.</p>
       </article>
       {/* 解释 */}
       <article className="article-block mt-5">
