@@ -18,21 +18,37 @@ export function getSupportedLangsMap(): SupportedLangsMap {
       loaded: true,
       label: 'English',
     },
+    // 丹麦语
     da: {
       localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/da.js',
       loaded: false,
       label: 'Dansk',
     },
+    // 德语
     de: {
       localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/de.js',
       loaded: false,
       label: 'Deutsch',
     },
+    // 西班牙语
     es: {
       localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/es.js',
       loaded: false,
       label: 'Español',
     },
+    // 法语
+    fr: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/fr.js',
+      loaded: false,
+      label: 'Français',
+    },
+    // 荷兰语
+    nl: {
+      localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/nl.js',
+      loaded: false,
+      label: 'Nederlands',
+    },
+    // 葡萄牙语
     pt: {
       localeUrl: 'https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt.js',
       loaded: false,
