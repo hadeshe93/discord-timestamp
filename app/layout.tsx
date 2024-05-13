@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-// import Script from 'next/script'
 import { Inter } from 'next/font/google';
 import IconMail from '@/components/IconMail';
-import IconGithub from '@/components/IconGithub';
+import LayoutFooter from './components/footer';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -48,14 +47,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-        <footer className="mt-6 mb-6 text-center">
-          <a href="mailto: support@discordtimestampsgenerator.com">
-            <IconMail className="text-lg manual-link" />
-          </a>
-          {/* <a href="https://github.com/hadeshe93/discord-timestamp" className='ml-10'>
-            <IconGithub className="text-lg manual-link" />
-          </a> */}
-        </footer>
+        <LayoutFooter />
       </body>
     </html>
   );

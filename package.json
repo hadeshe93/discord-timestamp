@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev # to start Next.js in development mode",
+    "dev": "next dev -p 3004 # to start Next.js in development mode",
     "build": "next build",
     "postbuild": "pnpm build:sitemap",
     "start": "next start # to start a Next.js production server.",

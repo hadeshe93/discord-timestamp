@@ -31,6 +31,10 @@ body {
 }
 
 @layer components {
+  .container-fit {
+    @apply max-w-[95%] mx-auto py-4 flex flex-wrap justify-between gap-5 sm:flex-nowrap sm:py-20 md:max-w-4xl;
+  }
+
   .article-block {
     @apply text-gray-700 mx-auto border rounded-lg p-3 w-11/12 sm:p-4 md:p-8 sm:w-4/5 md:w-2/3 md:max-w-4xl;
   }
